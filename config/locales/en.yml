@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+
+  site:
+    categories: "Categories"
