@@ -7,4 +7,5 @@ Grande aplicação utilizando Ruby On Rails
 * Criar tarefas
 * Criar projetos
 * Criar usuários
+* Criar dashboards
 
