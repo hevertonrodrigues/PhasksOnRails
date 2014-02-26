@@ -24,3 +24,6 @@ en:
 
   site:
     categories: "Categories"
+    collaborators: "Collaborators"
+    roles: "Roles"
+    select: "Select"
