@@ -23,10 +23,19 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              <li><%= link_to t( 'site.projects' ), projects_path %></li>
-              <li><%= link_to t( 'site.categories' ), categories_path %></li>
-              <li><%= link_to t( 'site.collaborators' ), collaborators_path %></li>
-              <li><%= link_to t( 'site.roles' ), roles_path %></li>
+
+							<%
+								@data_tables.each do |model|
+							%>
+
+								<li><%= link_to t( 'site.' + model ), send("#{model}_path", model) unless model == 'schema_migrations' %></li>
+
+							<%
+								end
+							%>
+
+
+
             </ul>
           </div>
         </div>
