@@ -35,6 +35,22 @@ end
 # Compass
 gem 'compass-rails'
 
+group :development, :test do
+
+	# BDD Gem
+	gem 'rspec'
+
+	# BDD Gem
+	gem 'rspec-rails'
+
+	# BDD Gem
+	gem 'factory_girl_rails', '~> 4.0'
+
+	# Name generator
+	gem 'faker'
+
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
