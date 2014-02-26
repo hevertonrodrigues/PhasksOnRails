@@ -49,6 +49,15 @@ group :development, :test do
 	# Name generator
 	gem 'faker'
 
+	# Use debugger
+	gem 'debugger', group: [:development, :test]
+
+	# Pry debugger
+	gem 'pry'
+
+	# Pry debugger
+	gem 'pry-rails'
+
 end
 
 # Use ActiveModel has_secure_password
@@ -59,6 +68,3 @@ end
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
