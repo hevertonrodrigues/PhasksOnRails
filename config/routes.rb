@@ -1,5 +1,9 @@
 Phasks::Application.routes.draw do
 
+  resources :projects
+
+  resources :colors
+
   resources :roles
 
   resources :collaborators

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226020039) do
+ActiveRecord::Schema.define(version: 20140226110224) do
 
   create_table "categories", force: true do |t|
     t.string   "type",        limit: 1
@@ -30,6 +30,23 @@ ActiveRecord::Schema.define(version: 20140226020039) do
   end
 
   add_index "collaborators", ["role_id"], name: "index_collaborators_on_role_id"
+
+  create_table "colors", force: true do |t|
+    t.string   "name",       limit: 20
+    t.string   "hex",        limit: 7
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "name",        limit: 100
+    t.text     "description"
+    t.integer  "color_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "projects", ["color_id"], name: "index_projects_on_color_id"
 
   create_table "roles", force: true do |t|
     t.string   "role",       limit: 50
