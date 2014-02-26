@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226110224) do
+ActiveRecord::Schema.define(version: 20140226164756) do
 
   create_table "categories", force: true do |t|
     t.string   "type",        limit: 1
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 20140226110224) do
   create_table "colors", force: true do |t|
     t.string   "name",       limit: 20
     t.string   "hex",        limit: 7
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "links", force: true do |t|
+    t.string   "name"
+    t.string   "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
