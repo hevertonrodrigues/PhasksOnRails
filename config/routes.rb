@@ -1,5 +1,9 @@
 Phasks::Application.routes.draw do
 
+  resources :roles
+
+  resources :collaborators
+
   resources :categories
 
   get "pages/home"
