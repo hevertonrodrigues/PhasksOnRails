@@ -2,7 +2,7 @@
 
 FactoryGirl.define do
   factory :color do
-		name Faker::Name.name
-		hex '#00ff00'
+    name "MyString"
+    hex "MyString"
   end
 end

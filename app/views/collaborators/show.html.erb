@@ -12,8 +12,8 @@
 
 <p>
   <strong>Role:</strong>
-  <%= @collaborator.role.role %>
+  <%= @collaborator.role %>
 </p>
 
-<%= link_to 'Edit', edit_collaborator_path(@collaborator), :class => 'btn btn-success' %> 
-<%= link_to 'Back', collaborators_path, :class => 'btn btn-default' %>
+<%= link_to t('site.edit'), edit_collaborator_path(@collaborator), { :class => 'btn btn-success' } %> 
+<%= back_link collaborators_path %>

@@ -1,6 +1,6 @@
-<h1>Editing task</h1>
+<h1><%= t('site.editing') %> task</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @task %> |
-<%= link_to 'Back', tasks_path %>
+<%= link_to '<i class="fa fa-search"></i> '.html_safe + t("site.show"), @task, { :class => 'btn btn-primary' } %> 
+<%= back_link tasks_path %>

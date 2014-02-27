@@ -1,5 +1,5 @@
-<h1>New collaborator</h1>
+<h1><%= t('site.new') %> collaborator</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Back', collaborators_path, :class => 'btn btn-default' %>
+<%= back_link collaborators_path %>
