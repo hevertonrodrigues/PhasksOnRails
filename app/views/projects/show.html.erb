@@ -12,8 +12,8 @@
 
 <p>
   <strong>Color:</strong>
-  <%= @project.color.name %>
+  <%= @project.color %>
 </p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+<%= link_to t('site.edit'), edit_project_path(@project), { :class => 'btn btn-success' } %> 
+<%= back_link projects_path %>

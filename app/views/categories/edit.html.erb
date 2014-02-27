@@ -1,6 +1,6 @@
-<h1>Editing category</h1>
+<h1><%= t('site.editing') %> category</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @category, :class => 'btn btn-primary' %> 
-<%= link_to 'Back', categories_path, :class => 'btn btn-default' %>
+<%= link_to '<i class="fa fa-search"></i> '.html_safe + t("site.show"), @category, { :class => 'btn btn-primary' } %> 
+<%= back_link categories_path %>

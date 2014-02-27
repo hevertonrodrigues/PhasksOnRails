@@ -1,6 +1,6 @@
-<h1>Editing collaborator</h1>
+<h1><%= t('site.editing') %> collaborator</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @collaborator, :class => 'btn btn-primary' %> 
-<%= link_to 'Back', collaborators_path, :class => 'btn btn-default' %>
+<%= link_to '<i class="fa fa-search"></i> '.html_safe + t("site.show"), @collaborator, { :class => 'btn btn-primary' } %> 
+<%= back_link collaborators_path %>

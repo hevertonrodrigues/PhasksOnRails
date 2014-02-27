@@ -2,9 +2,9 @@
 <html>
 <head>
   <title>Phasks</title>
-  <%= stylesheet_link_tag    "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", media: "all" %>
-  <%= stylesheet_link_tag    "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", media: "all" %>
-  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", media: "all" %>
+  <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", media: "all" %>
+  <%= stylesheet_link_tag "application", media: "all" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -23,19 +23,9 @@
           </div>
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-
-							<%
-								@data_tables.each do |model|
-							%>
-
-								<li><%= link_to t( 'site.' + model ), send("#{model}_path", model) unless model == 'schema_migrations' %></li>
-
-							<%
-								end
-							%>
-
-
-
+              <% @data_tables.each do |model| %>
+                <li><%= link_to t( 'site.' + model ), send("#{model}_path", model) unless model == 'schema_migrations' %></li>
+              <% end %>
             </ul>
           </div>
         </div>
@@ -52,5 +42,6 @@
   </div>
   <%= javascript_include_tag "//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" %>
   <%= javascript_include_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js" %>
+  <%= javascript_include_tag "application" %>
 </body>
 </html>

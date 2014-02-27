@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140226171504) do
+ActiveRecord::Schema.define(version: 20140227022250) do
 
   create_table "categories", force: true do |t|
     t.string   "type",        limit: 1
@@ -55,8 +55,14 @@ ActiveRecord::Schema.define(version: 20140226171504) do
   end
 
   create_table "tasks", force: true do |t|
+    t.string   "task",            limit: 200
+    t.text     "description"
+    t.integer  "status"
+    t.integer  "collaborator_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "tasks", ["collaborator_id"], name: "index_tasks_on_collaborator_id"
 
 end
