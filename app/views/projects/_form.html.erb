@@ -21,7 +21,7 @@
   </div>
   <div class="form-group">
     <%= f.label :color_id %><br>
-    <%= f.text_field :color_id, :class => 'form-control' %>
+    <%= f.select :color_id, Color.all.collect {|c| [c.name, c.id]}, { include_blank: 'Selecione' }, { :class => 'form-control' } %>
   </div>
   <div class="form-group actions">
     <%= f.submit :class => 'btn btn-success' %>

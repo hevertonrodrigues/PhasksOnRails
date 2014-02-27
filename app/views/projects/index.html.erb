@@ -14,7 +14,7 @@
       <tr>
         <td><%= project.name %></td>
         <td><%= project.description %></td>
-        <td><%= project.color %></td>
+        <td><%= project.color.name %></td>
         <td><%= link_to t('site.show'), project, :class => 'btn btn-info' %></td>
         <td><%= link_to t('site.edit'), edit_project_path(project), :class => 'btn btn-success' %></td>
         <td><%= link_to t('site.destroy'), project, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>

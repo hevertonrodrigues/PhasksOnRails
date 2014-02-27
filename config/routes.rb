@@ -1,12 +1,12 @@
 Phasks::Application.routes.draw do
 
+  resources :projects
+
   resources :categories
 
   resources :collaborators
 
   resources :roles
-
-  resources :projects
 
   resources :tasks
 

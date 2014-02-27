@@ -12,7 +12,7 @@
 
 <p>
   <strong>Color:</strong>
-  <%= @project.color %>
+  <%= @project.color.name %>
 </p>
 
 <%= link_to t('site.edit'), edit_project_path(@project), { :class => 'btn btn-success' } %> 
