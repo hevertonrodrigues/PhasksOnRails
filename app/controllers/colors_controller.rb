@@ -63,7 +63,9 @@ class ColorsController < ApplicationController
 
   # Modal
   def modal
+    @color = Color.new
     @colors = Color.all
+		render layout: false
   end
 
   private

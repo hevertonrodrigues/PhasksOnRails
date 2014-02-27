@@ -1,2 +1,71 @@
-<h1><%= t('site.listing') %> colors</h1>
-<p>Modal de cores</p>
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h4 class="modal-title" id="myModalLabel">Cores</h4>
+  </div>
+  <div class="modal-body">
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#add-color" data-toggle="tab">Adicionar</a></li>
+      <li><a href="#list-color" data-toggle="tab">Listar</a></li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div class="tab-content">
+      <div class="tab-pane active" id="add-color">
+
+
+
+<%= form_for(@color, :html_options => { :class => 'form' }) do |f| %>
+  <% if @color.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@color.errors.count, "error") %> prohibited this color from being saved:</h2>
+
+      <ul>
+      <% @color.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name, :class => 'form-control' %>
+  </div>
+  <div class="form-group">
+    <%= f.label :hex %><br>
+    <%= f.text_field :hex, :class => 'form-control' %>
+  </div>
+  <div class="form-group actions">
+    <%= f.submit :class => 'btn btn-success' %>
+  </div>
+<% end %>
+
+
+
+      </div>
+      <div class="tab-pane" id="list-color">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Color</th>
+							<th>Hex</th>
+						</tr>
+					</thead>
+					<tbody>
+						<% @colors.each do |color| %>
+							<tr>
+								<td><%= color.name %></td>
+								<td><%= color.hex %></td>
+							</tr>
+						<% end %>
+					</tbody>
+				</table>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-primary">Save changes</button>
+  </div>

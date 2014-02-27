@@ -10,6 +10,8 @@ Phasks::Application.routes.draw do
 
   resources :tasks
 
+	get 'colors/modal' => 'colors#modal'
+
   resources :colors
 
   get "pages/home"
