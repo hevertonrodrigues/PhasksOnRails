@@ -1,3 +1,5 @@
+//= require jquery.minicolors
+
 @import "compass/css3";
 
 // Home
@@ -12,5 +14,25 @@
 		background: #eee;
 		display: inline-block;
 		padding: 0.5em 1em;
+	}
+}
+
+// Colorpicker
+.preview-color {
+	@include box-shadow( inset 1px -1px 0px rgba(black, 0.1) );
+	width: 50px;
+	height: 50px;
+	margin:5px;
+	display: inline-block;
+}
+.minicolors-theme-default {
+	.minicolors-input {
+		height: auto;
+		padding-left: 34px;
+	}
+	.minicolors-swatch {
+		height: 18px;
+		left:7px;
+		top:6px;
 	}
 }
