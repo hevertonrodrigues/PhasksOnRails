@@ -12,10 +12,5 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require_tree .
 //= require jquery.minicolors
-
-$(document).ready(function(){
-	$('.color-picker').minicolors();
-});
