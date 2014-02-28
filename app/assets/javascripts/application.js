@@ -12,5 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require_tree .
 //= require jquery.minicolors
+//= require jquery-fileupload
+//= require_tree .
