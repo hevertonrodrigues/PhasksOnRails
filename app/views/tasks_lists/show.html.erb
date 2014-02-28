@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tasks_list.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tasks_list.description %>
+</p>
+
+<%= link_to t('site.edit'), edit_tasks_list_path(@tasks_list), { :class => 'btn btn-success' } %> 
+<%= back_link tasks_lists_path %>
