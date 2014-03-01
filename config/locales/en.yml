@@ -47,3 +47,6 @@ en:
     destroy: "Delete"
     description: "Description"
     name: "Name"
+    tasks: "Tasks"
+    tasks_statuses: "Task Status"
+    index: "List"

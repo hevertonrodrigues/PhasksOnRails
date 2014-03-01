@@ -1,4 +1,19 @@
+<div class="page-header">
+  <h1><%= t('site.show_tasks') %></h1>
+</div>
+<%= breadcrumb %>
+
 <p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task List:</strong>
+  <%= if @task.tasks_list then @task.tasks_list.name end %>
+</p>
+
+<p>
+  <strong>Project:</strong>
+  <%= if @task.project then @task.project.name end %>
+</p>
 
 <p>
   <strong>Task:</strong>
@@ -12,12 +27,12 @@
 
 <p>
   <strong>Status:</strong>
-  <%= @task.status %>
+  <%= if @task.tasks_status then @task.tasks_status.name end %>
 </p>
 
 <p>
   <strong>Collaborator:</strong>
-  <%= @task.collaborator.name %>
+  <%= if @task.collaborator then @task.collaborator.name end %>
 </p>
 
 <%= link_to t('site.edit'), edit_task_path(@task), { :class => 'btn btn-success' } %> 

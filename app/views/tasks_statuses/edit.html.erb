@@ -1,0 +1,6 @@
+<h1><%= t('site.editing') %> tasks_status</h1>
+
+<%= render 'form' %>
+
+<%= link_to '<i class="fa fa-search"></i> '.html_safe + t("site.show"), @tasks_status, { :class => 'btn btn-primary' } %> 
+<%= back_link tasks_statuses_path %>

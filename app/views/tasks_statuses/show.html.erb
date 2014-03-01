@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tasks_status.name %>
+</p>
+
+<%= link_to t('site.edit'), edit_tasks_status_path(@tasks_status), { :class => 'btn btn-success' } %> 
+<%= back_link tasks_statuses_path %>
