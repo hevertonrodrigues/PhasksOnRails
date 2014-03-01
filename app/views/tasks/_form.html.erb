@@ -28,8 +28,8 @@
     <%= f.text_area :description, :class => 'form-control' %>
   </div>
   <div class="form-group">
-    <%= f.label :status %><br>
-    <%= f.text_field :status, :class => 'form-control' %>
+    <%= f.label :tasks_status_id %><br>
+     <%= f.select :tasks_status_id, TasksStatus.all.collect {|c| [c.name, c.id]}, { include_blank: 'Selecione' }, { :class => 'form-control' } %>
   </div>
   <div class="form-group">
     <%= f.label :collaborator_id %><br>

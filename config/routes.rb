@@ -1,5 +1,7 @@
 Phasks::Application.routes.draw do
 
+  resources :tasks_statuses
+
   resources :tasks_lists
 
   resources :projects

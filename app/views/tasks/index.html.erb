@@ -1,11 +1,13 @@
 <h1><%= t('site.listing') %> tasks</h1>
-<p><%= link_to t("site.new") + ' Task', new_task_path, :class => 'btn btn-primary' %></p>
+<p><%= add_link(new_task_path) %></p>
+<p><%=  %></p>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Status</th>
+      <th>Task List</th>
       <th>Task</th>
       <th>Description</th>
-      <th>Status</th>
       <th>Collaborator</th>
       <th colspan="3"></th>
     </tr>
@@ -13,13 +15,14 @@
   <tbody>
     <% @tasks.each do |task| %>
       <tr>
+        <td><%= if task.tasks_status then task.tasks_status.name end %></td>
+        <td><%= if task.tasks_list then task.tasks_list.name end %></td>
         <td><%= task.task %></td>
         <td><%= task.description %></td>
-        <td><%= task.status %></td>
-        <td><%= task.collaborator.name %></td>
-        <td><%= link_to t('site.show'), task, :class => 'btn btn-info' %></td>
-        <td><%= link_to t('site.edit'), edit_task_path(task), :class => 'btn btn-success' %></td>
-        <td><%= link_to t('site.destroy'), task, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        <td><%= if task.collaborator then task.collaborator.name end %></td>
+        <td><%= show_link task %></td>
+        <td><%= edit_link edit_task_path(task) %></td>
+        <td><%= destroy_link task %></td>
       </tr>
     <% end %>
   </tbody>
