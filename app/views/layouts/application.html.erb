@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Phasks</title>
+  <meta charset="utf-8">
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css", media: "all" %>
   <%= stylesheet_link_tag "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css", media: "all" %>
   <%= stylesheet_link_tag "application", media: "all" %>
@@ -24,7 +25,8 @@
           <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <% @data_tables.each do |model| %>
-                <li><%= link_to t( 'site.' + model ), send("#{model}_path", model) unless model == 'schema_migrations' %></li>
+                <% @class_top_nav = if model == controller.controller_name then 'active' else '' end %>
+                <li class="<%= @class_top_nav %>"><%= link_to t( 'site.' + model ), send("#{model}_path", model) unless model == 'schema_migrations' %></li>
               <% end %>
             </ul>
           </div>

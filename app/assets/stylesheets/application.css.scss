@@ -3,6 +3,14 @@
 
 @import "compass/css3";
 
+// Header
+.page-header {
+	margin-top:0;
+	h1 {
+		margin-top:0;
+	}
+}
+
 // Home
 .featured { 
 	text-align: center; 
@@ -25,6 +33,12 @@
 	height: 50px;
 	margin:5px;
 	display: inline-block;
+	&.small {
+		width: 20px;
+		height: 20px;
+		vertical-align: middle;
+		margin: 0 5px 0 0;
+	}
 }
 .minicolors-theme-default {
 	.minicolors-input {
