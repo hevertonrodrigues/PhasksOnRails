@@ -69,6 +69,9 @@ gem "jquery-fileupload-rails"
 # paperclip
 gem "paperclip", "~> 4.1"
 
+# Modal para imagens
+gem 'fancybox-rails'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

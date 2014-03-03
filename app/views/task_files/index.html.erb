@@ -16,8 +16,9 @@
       <tr>
         <td><%= if task_file.task then task_file.task.task end %></td>
         <td><%= task_file.file %></td>
-        <td><%= image_tag task_file.file(:thumb) %></td>
+        <td><%= link_to (image_tag task_file.file(:thumb)), task_file.file(:original), :class => 'lightbox' %></td>
         <td>
+          <%= show_link task_file %> 
           <%= destroy_link task_file %> 
         </td>
       </tr>

@@ -1,4 +1,5 @@
 class Task < ActiveRecord::Base
+  default_scope { order('id DESC') } 
   belongs_to :project
   belongs_to :collaborator
   belongs_to :tasks_list

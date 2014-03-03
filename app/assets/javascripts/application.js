@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require jquery.minicolors
 //= require jquery-fileupload
+//= require fancybox
+//= require phasks
 //= require_tree .
