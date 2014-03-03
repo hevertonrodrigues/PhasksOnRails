@@ -4,7 +4,7 @@ class TaskFilesController < ApplicationController
   # GET /task_files
   # GET /task_files.json
   def index
-    @task_files = TaskFile.all
+    @task_files = TaskFile.paginate(:page => params[:page], :per_page => 10)
   end
 
   # POST /task_files

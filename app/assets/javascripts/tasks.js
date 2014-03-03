@@ -22,10 +22,18 @@ Phasks.Tasks = {
 	setDeleteFileItems: function() {
 		$('body')
 			.on( 'ajax:beforeSend', '.box-files .item .btn-danger', function() {
-				$(this).parent().fadeTo( 100, 0.3 );
+				$(this).closest('.item').fadeTo( 100, 0.3 );
 			})
 			.on( 'ajax:complete', '.box-files .item .btn-danger', function() {
-				$(this).parent().fadeOut( 300 );
+				$(this).closest('.item').fadeOut( 300 );
+			});
+			
+		$('body')
+			.on( 'ajax:beforeSend', '.template-download .btn-danger', function() {
+				$(this).closest('tr').fadeTo( 100, 0.3 );
+			})
+			.on( 'ajax:complete', '.template-download .btn-danger', function() {
+				$(this).closest('tr').fadeOut( 300 );
 			});
 	}
 };

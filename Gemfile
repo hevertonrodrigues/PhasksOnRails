@@ -72,6 +72,9 @@ gem "paperclip", "~> 4.1"
 # Modal para imagens
 gem 'fancybox-rails'
 
+# Paginacao
+gem 'will_paginate-bootstrap'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

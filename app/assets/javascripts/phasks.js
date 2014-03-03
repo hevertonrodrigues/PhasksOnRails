@@ -3,7 +3,10 @@ var Phasks = {
 		this.setLibs();
 	},
 	setLibs: function() {
-  		$("a.lightbox").fancybox();
+  		$('body').on('click', 'a.lightbox', function( e ) {
+  			e.preventDefault();
+  			$.fancybox( this );
+  		});
 	}
 };
 
