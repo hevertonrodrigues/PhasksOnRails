@@ -7,6 +7,27 @@ var fileUploadErrors = {
   emptyResult: 'Empty file upload result'
 };
 
-$(function () {
-  $('#fileupload').fileupload();
-});
+var Phasks = Phasks || {};
+
+Phasks.Tasks = {
+	init: function() {
+		this.setUpload();
+		this.setDeleteFileItems();
+	},
+	setUpload: function() {
+		$('#fileupload').fileupload({
+			async: false
+		});
+	},
+	setDeleteFileItems: function() {
+		$('body')
+			.on( 'ajax:beforeSend', '.box-files .item .btn-danger', function() {
+				$(this).parent().fadeTo( 100, 0.3 );
+			})
+			.on( 'ajax:complete', '.box-files .item .btn-danger', function() {
+				$(this).parent().fadeOut( 300 );
+			});
+	}
+};
+
+$(function() { Phasks.Tasks.init() });

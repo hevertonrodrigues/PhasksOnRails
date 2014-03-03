@@ -25,6 +25,11 @@ module TagsHelper
 		link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, path, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger', :title => t('site.destroy')
 	end
 
+	# Link para deletar e por ajax e retornar json
+	def destroy_link_remote(path)
+		link_to '<i class="glyphicon glyphicon-remove"></i>'.html_safe, path, "data-type" => :json, :remote => true, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger', :title => t('site.destroy')
+	end
+
 	# Breadcrumb
 	def breadcrumb
 		%{<ol class="breadcrumb">

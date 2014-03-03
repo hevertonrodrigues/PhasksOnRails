@@ -40,12 +40,22 @@
   </div>
 <% end %>
 
+<div class="box-files">
+  <h3><%= t('site.files') %></h3>
+  <% for task_file in @task.task_file  %>
+    <div class="item">
+      <%= link_to (image_tag task_file.file(:medium), :class => 'img-thumbnail img-responsive'), task_file.file(:original), :class => 'lightbox' %> 
+      <%= destroy_link_remote task_file %>
+    </div>
+  <% end %>
+</div>
+
 <%= form_for(TaskFile.new, :html_options => { :class => 'form', :multipart => true }, :html => { :id => 'fileupload' }) do |f| %>
   <%= f.text_field :task_id, :type => 'hidden', :value => @task.id %>
 
   <!-- Upload test -->
   <div class="form-group">
-    <h3>Upload file</h3>
+    <h3><%= t('site.upload_file') %></h3>
     <!-- The fileupload-buttonbar contains buttons to add/delete files and start/cancel the upload -->
     <div class="fileupload-buttonbar">
       <div class="span7">

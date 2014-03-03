@@ -58,3 +58,18 @@
 		top:6px;
 	}
 }
+
+// Uploads
+.box-files {
+	.item {
+		display: inline-block; margin:0 10px 10px 0;
+		position: relative;
+		z-index: 1;
+		.btn {
+			position: absolute;
+			z-index: 2;
+			top: 10px;
+			left: 10px;
+		}
+	}
+}
