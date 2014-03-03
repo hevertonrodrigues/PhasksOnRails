@@ -1,0 +1,24 @@
+<div class="page-header">
+  <h1><%= t('site.show_task_files') %></h1>
+</div>
+<%= breadcrumb %>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Task List:</strong>
+  <%= if @task_file.task then @task_file.task.task end %>
+</p>
+
+<p>
+  <strong>File Path:</strong>
+  <%= @task_file.file %>
+</p>
+
+<p>
+  <strong>Preview:</strong>
+  <%= image_tag @task_file.file(:thumb) %>
+</p>
+
+<%= link_to t('site.edit'), edit_task_file_path(@task_file), { :class => 'btn btn-success' } %> 
+<%= back_link task_files_path %>

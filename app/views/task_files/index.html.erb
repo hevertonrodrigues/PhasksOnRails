@@ -1,0 +1,26 @@
+<div class="page-header">
+  <h1><%= t('site.listing_tasks') %></h1>
+</div>
+<%= breadcrumb %>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= t('site.task') %></th>
+      <th><%= t('site.file') %></th>
+      <th><%= t('site.preview') %></th>
+      <th><%= t('site.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @task_files.each do |task_file| %>
+      <tr>
+        <td><%= if task_file.task then task_file.task.task end %></td>
+        <td><%= task_file.file %></td>
+        <td><%= image_tag task_file.file(:thumb) %></td>
+        <td>
+          <%= destroy_link task_file %> 
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

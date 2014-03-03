@@ -1,4 +1,4 @@
-<%= form_for(@task, :html_options => { :class => 'form', :multipart => true }, :html => { :id => 'fileupload' }) do |f| %>
+<%= form_for(@task, :html_options => { :class => 'form' }) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
@@ -38,7 +38,11 @@
   <div class="form-group actions">
     <%= f.submit :class => 'btn btn-success' %>
   </div>
-  
+<% end %>
+
+<%= form_for(TaskFile.new, :html_options => { :class => 'form', :multipart => true }, :html => { :id => 'fileupload' }) do |f| %>
+  <%= f.text_field :task_id, :type => 'hidden', :value => @task.id %>
+
   <!-- Upload test -->
   <div class="form-group">
     <h3>Upload file</h3>
@@ -49,7 +53,7 @@
         <span class="btn btn-success fileinput-button">
           <i class="icon-plus icon-white"></i>
           <span>Add files...</span>
-          <%= f.file_field :upload, :multiple => 'multiple' %>
+          <%= f.file_field :file, multiple: true, name: 'task_file[file]' %>
         </span>
         <button type="submit" class="btn btn-primary start">
           <i class="icon-upload icon-white"></i>
@@ -117,15 +121,15 @@
       <tr class="template-download fade">
           <td>
               <span class="preview">
-                  {% if (file.thumbnailUrl) { %}
-                      <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnailUrl%}"></a>
+                  {% if (file.thumbnail_url) { %}
+                      <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" data-gallery><img src="{%=file.thumbnail_url%}"></a>
                   {% } %}
               </span>
           </td>
           <td>
               <p class="name">
                   {% if (file.url) { %}
-                      <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnailUrl?'data-gallery':''%}>{%=file.name%}</a>
+                      <a href="{%=file.url%}" title="{%=file.name%}" download="{%=file.name%}" {%=file.thumbnail_url?'data-gallery':''%}>{%=file.name%}</a>
                   {% } else { %}
                       <span>{%=file.name%}</span>
                   {% } %}
@@ -138,8 +142,8 @@
               <span class="size">{%=o.formatFileSize(file.size)%}</span>
           </td>
           <td>
-              {% if (file.deleteUrl) { %}
-                  <button class="btn btn-danger delete" data-type="{%=file.deleteType%}" data-url="{%=file.deleteUrl%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
+              {% if (file.delete_url) { %}
+                  <button class="btn btn-danger delete" data-type="{%=file.delete_type%}" data-url="{%=file.delete_url%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                       <i class="glyphicon glyphicon-trash"></i>
                       <span>Delete</span>
                   </button>
@@ -155,5 +159,4 @@
   {% } %}
   </script>
   <!-- Upload test -->
-
 <% end %>

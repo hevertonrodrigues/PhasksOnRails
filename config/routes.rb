@@ -14,6 +14,8 @@ Phasks::Application.routes.draw do
 
   resources :tasks
 
+  resources :task_files
+
 	get 'colors/modal' => 'colors#modal'
 
   resources :colors

@@ -66,6 +66,9 @@ gem 'jquery-minicolors-rails'
 # Upload
 gem "jquery-fileupload-rails"
 
+# paperclip
+gem "paperclip", "~> 4.1"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

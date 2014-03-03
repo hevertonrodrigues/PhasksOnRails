@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140301175208) do
+ActiveRecord::Schema.define(version: 20140302134005) do
 
   create_table "categories", force: true do |t|
     t.string   "type",        limit: 1
@@ -53,6 +53,16 @@ ActiveRecord::Schema.define(version: 20140301175208) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "task_files", force: true do |t|
+    t.string   "file_file_name"
+    t.string   "file_content_type"
+    t.integer  "file_file_size"
+    t.datetime "file_updated_at"
+    t.integer  "task_id"
+  end
+
+  add_index "task_files", ["task_id"], name: "index_task_files_on_task_id"
 
   create_table "tasks", force: true do |t|
     t.string   "task",            limit: 200
