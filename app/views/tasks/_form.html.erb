@@ -45,7 +45,7 @@
     <h3><%= t('site.files') %></h3>
     <% for task_file in @task.task_file  %>
       <div class="item">
-        <%= link_to (image_tag task_file.file(:medium), :class => 'img-thumbnail img-responsive'), task_file.file(:original), :class => 'lightbox' %> 
+        <%= task_file_file_preview( task_file, "100x100" ) %>
         <%= destroy_link_remote task_file %>
       </div>
     <% end %>
@@ -148,11 +148,6 @@
                   <button class="btn btn-danger delete" data-type="json" data-confirm="Are you sure?" data-remote="true" data-method="{%=file.delete_type%}" data-url="{%=file.delete_url%}"{% if (file.deleteWithCredentials) { %} data-xhr-fields='{"withCredentials":true}'{% } %}>
                       <i class="glyphicon glyphicon-trash"></i>
                       <span>Delete</span>
-                  </button>
-              {% } else { %}
-                  <button class="btn btn-warning cancel">
-                      <i class="glyphicon glyphicon-ban-circle"></i>
-                      <span>Cancel</span>
                   </button>
               {% } %}
           </td>
