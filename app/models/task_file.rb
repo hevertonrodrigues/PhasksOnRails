@@ -22,7 +22,7 @@ class TaskFile < ActiveRecord::Base
   # Hash para retorno do json do jquery upload
   def to_jq_upload
     {
-      "thumbnail_url" => if content_type_images.include?( file.content_type ) then file.url(:thumb) else file_icon( file ) end ,
+      "thumbnail_url" => if TaskFile.content_type_images.include?( file.content_type ) then file.url(:thumb) else file_icon( file ) end ,
       "name" => read_attribute(:file_file_name),
       "size" => read_attribute(:file_file_size),
       "url" => file.url(:original),
@@ -37,8 +37,8 @@ class TaskFile < ActiveRecord::Base
     "http://dummyimage.com/#{size}/cccccc/777777.png&text=#{extension}"
   end
 
-  # Retorna content-types de imagens apenas
-  def content_type_images
+  # Retorna content-types de imagens apenas (metodo estatico)
+  def self.content_type_images
     ["image/jpeg", "image/jpg", "image/png", "image/gif"]
   end
 end
