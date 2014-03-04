@@ -15,7 +15,11 @@
   <tbody>
     <% @projects.each do |project| %>
       <tr>
-        <td><%= project.name %></td>
+        <td>
+          <% color = if project.color then project.color.hex else nil end %>
+          <div class="preview-color small" style="background-color:<%= color %>;"></div> 
+          <%= project.name %>
+        </td>
         <td><%= project.description %></td>
         <td><%= project.color.name %></td>
         <td>

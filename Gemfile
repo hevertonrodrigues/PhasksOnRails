@@ -75,6 +75,9 @@ gem 'fancybox-rails'
 # Paginacao
 gem 'will_paginate-bootstrap'
 
+# Growl para avisos
+gem 'growlyflash'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 

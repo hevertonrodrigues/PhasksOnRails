@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery.minicolors
 //= require jquery-fileupload
-//= require fancybox
 //= require phasks
+//= require fancybox
+//= require growlyflash/growlyflash
 //= require_tree .
