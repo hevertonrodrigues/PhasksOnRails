@@ -1,11 +1,14 @@
-<h1><%= t('site.listing') %> tasks_lists</h1>
-<p><%= link_to t("site.new") + ' Tasks list', new_tasks_list_path, :class => 'btn btn-primary' %></p>
+<div class="page-header">
+  <h1><%= t('site.listing_tasks_lists') %> </h1>
+</div>
+<%= breadcrumb %>
+<p><%= add_link(new_tasks_list_path) %></p>
 <table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th colspan="3"></th>
+      <th><%= t('site.actions') %></th>
     </tr>
   </thead>
   <tbody>
@@ -13,9 +16,11 @@
       <tr>
         <td><%= tasks_list.name %></td>
         <td><%= tasks_list.description %></td>
-        <td><%= link_to t('site.show'), tasks_list, :class => 'btn btn-info' %></td>
-        <td><%= link_to t('site.edit'), edit_tasks_list_path(tasks_list), :class => 'btn btn-success' %></td>
-        <td><%= link_to t('site.destroy'), tasks_list, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'btn btn-danger' %></td>
+        <td>
+          <%= show_link tasks_list %> 
+          <%= edit_link edit_tasks_list_path(tasks_list) %> 
+          <%= destroy_link tasks_list %> 
+        </td>
       </tr>
     <% end %>
   </tbody>

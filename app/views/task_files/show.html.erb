@@ -20,5 +20,4 @@
   <%= link_to (image_tag @task_file.file(:thumb)), @task_file.file(:original), :class => 'lightbox' %>
 </p>
 
-<%= link_to t('site.edit'), edit_task_file_path(@task_file), { :class => 'btn btn-success' } %> 
 <%= back_link task_files_path %>
