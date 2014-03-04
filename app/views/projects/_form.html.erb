@@ -20,7 +20,7 @@
     <%= f.text_area :description, :class => 'form-control' %>
   </div>
   <div class="form-group">
-    <%= link_to '<i class="fa fa-plus"></i>'.html_safe, '/colors/modal', { :class => 'modal-add', 'data-toggle' => 'modal', 'data-target' => '#colorModal' } %>
+    <%= link_to get_icon('plus'), '/colors/modal', { :class => 'modal-add', 'data-toggle' => 'modal', 'data-target' => '#colorModal' } %>
     <%= f.label :color_id %><br>
     <%= f.select :color_id, Color.all.collect {|c| [c.name, c.id]}, { include_blank: 'Selecione' }, { :class => 'form-control' } %>
   </div>
