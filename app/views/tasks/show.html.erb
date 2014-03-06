@@ -7,12 +7,12 @@
 
 <p>
   <strong>Task List:</strong>
-  <%= if @task.tasks_list then @task.tasks_list.name end %>
+  <%= @task.tasks_list.name unless @task.tasks_list.nil? %>
 </p>
 
 <p>
   <strong>Project:</strong>
-  <%= if @task.project then @task.project.name end %>
+  <%= @task.project.name unless @task.project.nil? %>
 </p>
 
 <p>
@@ -27,13 +27,13 @@
 
 <p>
   <strong>Status:</strong>
-  <%= if @task.tasks_status then @task.tasks_status.name end %>
+  <%= @task.tasks_status.name unless @task.tasks_status.nil? %>
 </p>
 
 <p>
   <strong>Collaborator:</strong>
-  <%= if @task.collaborator then @task.collaborator.name end %>
+  <%= @task.collaborator.name unless @task.collaborator.nil? %>
 </p>
 
-<%= link_to t('site.edit'), edit_task_path(@task), { :class => 'btn btn-success' } %> 
+<%= link_to t('site.edit'), edit_task_path(@task), { :class => 'btn btn-success' } %>
 <%= back_link tasks_path %>

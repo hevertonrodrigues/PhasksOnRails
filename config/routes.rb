@@ -1,5 +1,6 @@
 Phasks::Application.routes.draw do
 
+  devise_for :admins
   resources :tasks_statuses
 
   resources :tasks_lists
@@ -21,6 +22,13 @@ Phasks::Application.routes.draw do
   resources :colors
 
   get "pages/home"
+
+
+	devise_scope :admin do
+		get '/login' => 'devise/sessions#new'
+	end
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

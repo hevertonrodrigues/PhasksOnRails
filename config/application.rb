@@ -24,5 +24,8 @@ module Phasks
     config.i18n.available_locales = [:en, :"pt-BR"]
     config.i18n.default_locale = :en
     config.encoding = "utf-8"
+
+		config.autoload_paths += %W(#{config.root}/lib/devise)
+
   end
 end

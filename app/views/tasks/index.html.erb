@@ -27,21 +27,18 @@
     <% @tasks.each do |task| %>
       <tr>
         <td>
-          <% if task.project then %>
-            <% color = if task.project.color then task.project.color.hex else nil end %>
-            <div class="preview-color small" style="background-color:<%= color %>;"></div> 
-            <%= task.project.name %>
-          <% end %>
+					<div class="preview-color small" style="background-color:<%= task.project.color.hex unless task.project.nil? || task.project.color.nil? %>;"></div>
+					<%= task.project.name unless task.project.nil? %>
         </td>
-        <td><%= if task.tasks_status then task.tasks_status.name end %></td>
-        <td><%= if task.tasks_list then task.tasks_list.name end %></td>
+        <td><%= task.tasks_status.name unless task.tasks_status.nil? %></td>
+        <td><%= task.tasks_list.name unless task.tasks_list.nil? %></td>
         <td><%= task.task %></td>
         <td><%= task.description %></td>
-        <td><%= if task.collaborator then task.collaborator.name end %></td>
+        <td><%= task.collaborator.name unless task.collaborator.nil?  %></td>
         <td>
-          <%= show_link task %> 
-          <%= edit_link edit_task_path(task) %> 
-          <%= destroy_link task %> 
+          <%= show_link task %>
+          <%= edit_link edit_task_path(task) %>
+          <%= destroy_link task %>
         </td>
       </tr>
     <% end %>

@@ -1,0 +1,9 @@
+<div class="navbar-collapse collapse">
+  <ul class="nav navbar-nav">
+    <% @data_tables.each do |model| %>
+      <% @class_top_nav = if model == controller.controller_name then 'active' else '' end %>
+      <li class="<%= @class_top_nav %>"><%= link_to t( 'site.' + model ), send("#{model}_path", model) unless model == 'schema_migrations' || model == 'admins' %></li>
+    <% end %>
+  </ul>
+</div>
+

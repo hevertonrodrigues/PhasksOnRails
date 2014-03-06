@@ -17,11 +17,11 @@
       <tr>
         <td><%= collaborator.name %></td>
         <td><%= collaborator.email %></td>
-        <td><%= collaborator.role.role %></td>
+        <td><%= collaborator.role.role unless collaborator.role.nil? %></td>
         <td>
-          <%= show_link collaborator %> 
-          <%= edit_link edit_collaborator_path(collaborator) %> 
-          <%= destroy_link collaborator %> 
+          <%= show_link collaborator %>
+          <%= edit_link edit_collaborator_path(collaborator) %>
+          <%= destroy_link collaborator %>
         </td>
       </tr>
     <% end %>
