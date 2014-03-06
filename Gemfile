@@ -6,6 +6,9 @@ gem 'rails', '4.0.3'
 # Use Devise for Auth
 gem 'devise'
 
+# Use for send mails
+gem 'mailcatcher'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -31,6 +34,7 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
 
 # Compass
 gem 'compass-rails'
