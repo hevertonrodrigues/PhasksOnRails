@@ -1,5 +1,6 @@
 class TaskFilesController < ApplicationController
   before_action :set_task_file, only: [:show, :destroy]
+	before_filter :authenticate_admin!
 
   # GET /task_files
   # GET /task_files.json
@@ -12,7 +13,7 @@ class TaskFilesController < ApplicationController
   def create
     @task_file = TaskFile.new(task_file_params)
 
-    respond_to do |format| 
+    respond_to do |format|
       if @task_file.save
         format.html {
           render :json => [@task_file.to_jq_upload].to_json,

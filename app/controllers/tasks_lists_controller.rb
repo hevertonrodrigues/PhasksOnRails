@@ -1,5 +1,6 @@
 class TasksListsController < ApplicationController
   before_action :set_tasks_list, only: [:show, :edit, :update, :destroy]
+	before_filter :authenticate_admin!
 
   # GET /tasks_lists
   # GET /tasks_lists.json

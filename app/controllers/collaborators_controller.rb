@@ -1,5 +1,6 @@
 class CollaboratorsController < ApplicationController
   before_action :set_collaborator, only: [:show, :edit, :update, :destroy]
+	before_filter :authenticate_admin!
 
   # GET /collaborators
   # GET /collaborators.json

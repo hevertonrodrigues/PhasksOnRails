@@ -1,5 +1,6 @@
 class TasksStatusesController < ApplicationController
   before_action :set_tasks_status, only: [:show, :edit, :update, :destroy]
+	before_filter :authenticate_admin!
 
   # GET /tasks_statuses
   # GET /tasks_statuses.json
