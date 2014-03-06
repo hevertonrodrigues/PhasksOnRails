@@ -50,3 +50,5 @@ en:
     tasks: "Tasks"
     tasks_statuses: "Task Status"
     index: "List"
+    results_filter: "Results filter"
+    search: "Search"

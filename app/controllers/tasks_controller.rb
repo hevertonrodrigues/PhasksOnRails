@@ -4,7 +4,8 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    q = "%#{params[:filter]}%"
+    @tasks = Task.where( "task like ? or description like ?", q, q ).paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /tasks/1

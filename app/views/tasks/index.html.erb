@@ -3,6 +3,14 @@
 </div>
 <%= breadcrumb %>
 <p><%= add_link(new_task_path) %></p>
+
+<form class="form-inline well" method="get">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="<%= t('site.results_filter') %>" value="<%= params[:filter] %>" size="30" name="filter">
+  </div>
+  <button type="submit" class="btn btn-default"><%= get_icon('search') %> <%= t('site.search') %></button>
+</form>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -39,3 +47,4 @@
     <% end %>
   </tbody>
 </table>
+<%= will_paginate @task_files, renderer: BootstrapPagination::Rails %>
