@@ -44,6 +44,10 @@ group :production do
 	# Use PostgressSQL as the database for Active Record
 	gem 'pg'
 
+
+	# To deploy on heroku
+	gem 'rails_12factor'
+
 end
 
 
@@ -102,3 +106,6 @@ gem 'growlyflash'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
+
+
+ruby "2.1.0"
